@@ -3,7 +3,19 @@
 
 // Funciones del alumno.
 
-// ...
+void vector_destruir(vector_t* vector)
+{
+    int i;
+    for(i = 0; i < vector->tam; i ++)
+    {
+        vector[i] = vector[i + 1];
+        vector->tam --;
+    }
+    free(vector->datos);
+    free(vector);
+}
+
+// bool vector_obtener(vector_t* vector, size_t pos, int* valor){}
 
 
 // Funciones implementadas por la catedra.
