@@ -15,8 +15,30 @@ void vector_destruir(vector_t* vector)
     free(vector);
 }
 
-// bool vector_obtener(vector_t* vector, size_t pos, int* valor){}
+bool vector_obtener(vector_t* vector, size_t pos, int* valor)
+{
+    if( (pos <= vector->tam -1) && (pos >= 0) && (vector->tam > 0))
+    {
+        *valor = vector->datos[pos];
+        return true;
+    }
+    return false;
+}
 
+bool vector_guardar(vector_t* vector, size_t pos, int valor)
+{
+    if( (pos <= vector->tam -1) && (pos >= 0) && (vector->tam > 0))
+    {
+        vector->datos[pos] = valor;
+        return true;
+    }
+    return false;
+}
+
+size_t vector_largo(vector_t* vector)
+{
+    return vector->tam;
+}
 
 // Funciones implementadas por la catedra.
 
